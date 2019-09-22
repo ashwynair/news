@@ -74,3 +74,14 @@ from (
     order by date(time) desc) as sq 
 where sq.percentage > 1;
 ```
+
+## Program
+The program is found in the Python3 script **logsanalysis.py**. The program is a Flask app which listens for a request on `port 8000` on `localhost` (i.e. `host='0.0.0.0'`).
+
+Once a request is received, it retrieves relevant answers to each question from pre-created views in the `news` database using the `get_ans()` function, wraps them into an HTML script and returns this to the client.
+
+### Running the program
+Once logged into Virtual Machine, `cd` to the directory containing the file **logsanalysis.py**. Run the program by running `python3 logsanalysis.py` at the command line.
+
+## Acknowledgements
+Details for **Getting Started** have been summarised from Udacity's "Installing the Virtual Machine" lesson, which can be found [here](https://classroom.udacity.com/nanodegrees/nd004/parts/51200cee-6bb3-4b55-b469-7d4dd9ad7765/modules/c57b57d4-29a8-4c5f-9bb8-5d53df3e48f4/lessons/5475ecd6-cfdb-4418-85a2-f2583074c08d/concepts/14c72fe3-e3fe-4959-9c4b-467cf5b7c3a0).

@@ -69,7 +69,7 @@ VIEWS = ("popular_articles", "popular_authors", "one_perc_error_days")
 @app.route('/', methods=['GET'])
 def main():
     '''Main page of the logs analysis.'''
-    raw_answers = get_posts()
+    raw_answers = get_ans()
     answers = []
     for i in range(len(raw_answers)):
         answers.append("".join(ANSWER[i] % (a, b) for a, b in raw_answers[i]))
@@ -77,7 +77,7 @@ def main():
     return html
 
 # 
-def get_posts():
+def get_ans():
     '''Return answers for each question from pre-defined views.'''
     db = connect(database=DBNAME)
     c = db.cursor()
