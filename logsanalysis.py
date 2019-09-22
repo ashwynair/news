@@ -76,7 +76,7 @@ def main():
     html = HTML_WRAP % tuple(answers)
     return html
 
-# 
+
 def get_ans():
     '''Return answers for each question from pre-defined views.'''
     db = connect(database=DBNAME)
